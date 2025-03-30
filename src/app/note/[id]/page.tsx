@@ -45,11 +45,10 @@ export default function NoteDetailPage() {
     if (!loading && !isLoggedIn) {
       router.push("/login");
     }
-  }, [loading, isLoggedIn]);
-
-  if (loading || !isLoggedIn) return null;
+  }, [loading, isLoggedIn, router]);
 
   // Load note from localStorage on initial mount
+
   useEffect(() => {
     if (!currentUser || typeof id !== "string") return;
     const notes = getNotes(currentUser);
@@ -59,8 +58,9 @@ export default function NoteDetailPage() {
       setTitle(found.title);
       setContent(found.content);
     }
-  }, [id]);
+  }, [id, currentUser]);
 
+  if (loading || !isLoggedIn) return null;
   if (!note) return <p>Note not found.</p>;
 
   return (
