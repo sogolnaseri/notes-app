@@ -25,12 +25,15 @@ export default function HomeContent() {
   const { isLoggedIn, currentUser } = useAuth();
   const router = useRouter();
 
+  // Load user's saved notes from localStorage when currentUser becomes available
   useEffect(() => {
-    const notes = JSON.parse(
-      localStorage.getItem(`notes-${currentUser}`) || "[]"
-    );
-    setNotes(notes);
-  }, []);
+    if (currentUser) {
+      const notes = JSON.parse(
+        localStorage.getItem(`notes-${currentUser}`) || "[]"
+      );
+      setNotes(notes);
+    }
+  }, [currentUser]);
 
   // Load notes when modal closes (i.e., after a new note is added)
   useEffect(() => {
@@ -44,7 +47,7 @@ export default function HomeContent() {
     if (!isLoggedIn) {
       router.push("/login");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, router]);
 
   // Avoid rendering main content until auth status is confirmed
   if (!isLoggedIn) return null;

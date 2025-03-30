@@ -39,8 +39,7 @@ export const FormInput: React.FC<FormInputProps> = ({
         onChange(val); // Update the parent’s state
       }}
       onBlur={() => {
-        const errorMsg = validator(value); // Revalidate on blur (optional behavior)
-        onChange(value); // Keep value in sync (especially if trimming or post-processing)
+        validator(value);
       }}
       error={!!error || value.length > maxLength} // Show error state if there’s an error or too long
       helperText={getHelperText(value, error)} // Show live feedback or error message
