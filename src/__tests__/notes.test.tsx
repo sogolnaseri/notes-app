@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent } from "@testing-library/react";
 import HomeContent from "../components/HomeContent";
 import "@testing-library/jest-dom";
 import React from "react";

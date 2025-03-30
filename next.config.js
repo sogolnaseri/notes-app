@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    turbo: false, // ✅ disables Turbopack, uses Webpack instead
-  },
-};
+const nextConfig = {};
 
 module.exports = nextConfig;
 

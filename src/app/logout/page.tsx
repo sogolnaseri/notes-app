@@ -12,7 +12,7 @@ export default function LogoutPage() {
   useEffect(() => {
     logout(); // Clear login state from context + localStorage
     router.push("/login"); // Redirect to login page
-  }, []);
+  }, [logout, router]);
 
   // Placeholder content while redirecting
   return <p>Logging you out...</p>;

@@ -28,7 +28,7 @@ export default function LoginPage() {
     if (isLoggedIn) {
       router.push("/");
     }
-  }, [isLoggedIn]);
+  }, [isLoggedIn, router]);
 
   // Handle login attempt
   const handleLogin = () => {
