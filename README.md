@@ -1,5 +1,5 @@
 #  Notes App
-A simple, responsive Notes App built with Next.js, TypeScript, MUI, and localStorage. This app allows users to securely log in, create, edit, and delete personal notes.
+A clean and responsive full-stack Notes App built with Next.js, TypeScript, Material UI, and localStorage. This project showcases best practices in modern React development, including authentication, state management, form validation, and CI/CD.
 
 ## 🚀 Live Demo
 🔗 [Notes App - Live Website](notes-app-eight-coral.vercel.app)  
@@ -42,29 +42,54 @@ src/
 ```
 
 
-## 📥 Installation Guide
+## 📥 Getting Started
 
-### **1️⃣ Clone the Repository**
 ```sh
-git clone https://github.com/sogolnaseri/news-aggregator.git
+git clone https://github.com/sogolnaseri/notes-app.git
 cd notes-app
-
-```
-### **2️⃣ Install Dependencies**
-```sh
 npm install
+npm run dev
 
 ```
-### **3️⃣ Run the Code**
-```sh
-npm run dev
-```
+Visit: http://localhost:3000
+
 ---
-## How To Test
+
+## 🔐 Login Credentials
+Use one of the mock users defined in `utils/mockUsers.ts`:
+
+```sh
+{ username: "admin", password: "password" }
+{ username: "sara",  password: "123456" }
+{ username: "alex", password: "abc123" }
+
+```
+
+---
+
+## ✨ App Flow
+1 - Login Page - Authenticates users using mock data  
+2 - Home Page - Lists notes for the current user  
+3 - Add Note - Opens modal to create a new note  
+4 - Edit Note - Navigate to `/note/:id` to edit or delete  
+
+---
+
+## ✅ Running Tests
 ```sh
 npm test
-
 ```
+- Tests are located in `src/__tests__`   
+- CI automatically runs tests on push via GitHub Actions  
 
+---
 
+## ⚙️ CI/CD with GitHub Actions + Vercel
+### GitHub Actions 
+- `.github/workflows/ci.yml` runs tests on every push or PR to main
+
+### Vercel Deployment
+- Connected to GitHub
+- Auto-deploys on push to `main`
+- Custom build: uses `/src/app/page.tsx` as the entry point
 
