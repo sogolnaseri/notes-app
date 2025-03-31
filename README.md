@@ -2,7 +2,7 @@
 A clean and responsive full-stack Notes App built with Next.js, TypeScript, Material UI, and localStorage. This project showcases best practices in modern React development, including authentication, state management, form validation, and CI/CD.
 
 ## 🚀 Live Demo
-🔗 [Notes App - Live Website](notes-app-eight-coral.vercel.app)  
+🔗 [Notes App - Live App](https://notes-app-eight-coral.vercel.app/login)  
 
 ---
 ## Features
